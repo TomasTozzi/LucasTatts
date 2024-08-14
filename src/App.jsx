@@ -9,6 +9,7 @@ function App() {
         }}
       >
         <h1>LUCAS TATTS</h1>
+        <h2>Los Mejores Tatuajes</h2>
       </div>
     </>
   );
