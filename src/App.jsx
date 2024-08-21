@@ -1,15 +1,12 @@
 import "./App.css";
+import  NavBar  from "./components/NavBar.jsx";
 
 function App() {
   return (
     <>
-      <div
-        style={{
-          margin: "auto",
-        }}
-      >
-        <h1>LUCAS TATTS</h1>
-        <h2>Los Mejores Tatuajes</h2>
+    <NavBar/>
+      <div className="">
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
       </div>
     </>
   );
