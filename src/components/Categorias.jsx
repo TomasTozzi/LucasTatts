@@ -1,11 +1,12 @@
-import Carrusel from "./Carrusel";
+import Card from "./Card";
 
 function Categorias() {
   return (
     <div>
       <h2 className="text-center text-2xl my-[5vh]">Categorias</h2>
-
-      <Carrusel />
+      <section>
+        <Card />
+      </section>
     </div>
   );
 }

@@ -1,0 +1,25 @@
+{
+    "categorias": [
+      {
+        "id": 1,
+        "name": "Tattoo black",
+        "imagenes": ""
+      },
+      {
+        "id": 2,
+        "name": "Tattoo mini",
+        "imagenes": ""
+      },
+      {
+        "id": 3,
+        "name": "Tattoo color",
+        "imagenes": ""
+      },
+      {
+        "id": 4,
+        "name": "Tattoo lettering",
+        "imagenes": ""
+      }
+    ]
+  }
+  
