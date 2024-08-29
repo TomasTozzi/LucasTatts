@@ -1,13 +1,16 @@
 import "./App.css";
 import  NavBar  from "./components/NavBar.jsx";
+import Main from "./components/Main.jsx"
+import Categorias from "./components/Categorias.jsx"
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
     <>
     <NavBar/>
-      <div className="">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      </div>
+    <Main/>
+    <Categorias/>
+    <Footer/>
     </>
   );
 }
