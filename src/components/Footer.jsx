@@ -2,8 +2,9 @@ import ContactForm from "./ContactForm.jsx";
 
 function Footer() {
   return (
-    <footer className="flex flex-col">
+    <footer className="flex flex-col md:flex-row-reverse  ">
       <ContactForm />
+    
       <div className="flex items-center justify-center my-[2vh]">
         <a href="https://www.instagram.com/lucas.tatts/?hl=es" target="blank">
           {" "}
@@ -21,10 +22,10 @@ function Footer() {
             />
           </svg>
         </a>
-      </div>
-      <p className="mt-2 text-sm text-gray-400">
+      <p className="mt-2 text-sm text-gray-400 flex md:items-end">
           &copy; {new Date().getFullYear()} Lucas Tatts. Todos los derechos reservados.
         </p>
+      </div>
     </footer>
   );
 }

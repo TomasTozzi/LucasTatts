@@ -2,15 +2,26 @@ import CategoriasJson from "../assets/categorias.json";
 
 const Card = () => {
   return (
-    <div className="grid grid-cols-2 gap-1 p-1 md:w-[70%] md:mx-auto lg:grid-cols-4 lg:w-[90%] lg:h-[20vh] lg:gap-4">
+    <div
+      className="grid grid-cols-2 gap-2 p-2
+        sm:grid-cols-1 sm:gap-2
+        md:w-[60%] md:mx-auto md:h-[30vh]
+        md:grid-cols-4 md:w-[100%]  lg:w-[90%] lg:h-[25vh] lg:gap-4"
+    >
       {CategoriasJson.categorias.map((categoria) => (
-        <div key={categoria.id} className="overflow-hidden shadow-lg rounded-lg md:">
-          <div className="relative">
+        <div
+          key={categoria.id}
+          className="overflow-hidden shadow-lg rounded-lg 
+            flex flex-col justify-center items-center
+            transition-transform transform hover:scale-105 hover:shadow-2xl
+            hover:border-dark-500 border-2 border-transparent"
+        >
+          <div className="relative w-full h-full">
             {/* Background Image */}
-            <div className="w-full h-[10vh] bg-cover bg-home  lg:h-[20vh]"></div>
+            <div className="w-full h-[25vh] bg-cover bg-home sm:h-[40vh]"></div>
             {/* Overlay with Text */}
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-              <h2 className="text-white text-xl font-bold">{categoria.name}</h2>
+              <h2 className="text-white text-lg font-bold">{categoria.name}</h2>
             </div>
           </div>
         </div>
