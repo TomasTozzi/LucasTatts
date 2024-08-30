@@ -1,13 +1,26 @@
+import { useEffect, useState } from 'react';
+
 function NavBar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10); // Cambia el valor para ajustar el punto de activación
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <header id="home" className={`transition-colors duration-300 ${scrolled ? 'bg-black bg-opacity-80' : 'bg-transparent'}`}>
+      <nav className={`border-gray-200 dark:border-gray-900 ${scrolled ? 'bg-black bg-opacity-80' : 'bg-transparent'}`}>
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="#home"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <p className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <p className="self-center text-white text-3xl font-semibold whitespace-nowrap dark:text-white">
               Lucas Tatts
             </p>
           </a>
@@ -36,11 +49,11 @@ function NavBar() {
             </svg>
           </button>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <a
                   href="#inicio"
-                  className="block py-2 px-3 text-black rounded hover:bg-zinc-950 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 text-xl text-white rounded hover:bg-zinc-300 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   aria-current="page"
                 >
                   Inicio
@@ -49,7 +62,7 @@ function NavBar() {
               <li>
                 <a
                   href="#categorias"
-                  className="block py-2 px-3 text-black rounded hover:bg-zinc-950 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 text-xl text-white rounded hover:bg-zinc-300 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Categorias
                 </a>
@@ -57,7 +70,7 @@ function NavBar() {
               <li>
                 <a
                   href="#contacto"
-                  className="block py-2 px-3 text-black rounded hover:bg-zinc-950 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 text-xl text-white rounded hover:bg-zinc-300 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Contacto
                 </a>

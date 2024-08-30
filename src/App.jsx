@@ -9,7 +9,7 @@ import ContactForm from "./components/ContactForm.jsx";
 function App() {
   return (
     <>
-    <NavBar/>
+    {/* <NavBar/> */}
     <Main/>
     <Categorias/>
     <ContactForm/>

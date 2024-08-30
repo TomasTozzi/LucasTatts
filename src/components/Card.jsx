@@ -2,14 +2,14 @@ import CategoriasJson from "../assets/categorias.json";
 
 const Card = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-6 p-6">
+    <div className="flex flex-col items-center gap-6 p-6">
       {CategoriasJson.categorias.map((categoria) => (
         <div
           key={categoria.id}
-          className="bg-white shadow-lg rounded-lg flex flex-col items-center border border-gray-200 w-full h-screen h-[25vh] sm:w-[90%] md:w-[80%] lg:w-[60%] xl:w-[50%]   md:h-[70vh]  xl:auto flex-shrink-0"
+          className="bg-white shadow-lg rounded-lg flex flex-col items-center border border-gray-200 w-[90%]  lg:w-[60%] xl:w-[50%] lg:flex-row-reverse flex-shrink-0"
         >
           {/* Imagen arriba */}
-          <div className="relative w-full h-1/2 md:h-3/5">
+          <div className="relative w-full h-full">
             <img
               src={categoria.imagenes} // Assuming categoria has an image property
               alt={categoria.name}
@@ -17,13 +17,13 @@ const Card = () => {
             />
           </div>
           {/* Contenido debajo */}
-          <div className="p-4 md:p-6 flex flex-col justify-between w-full h-1/2 md:h-2/5">
+          <div className="p-4 flex flex-col w-full h-auto">
             {/* Título */}
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-800  text-left">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 text-left mb-2">
               {categoria.name}
             </h2>
             {/* Descripción visible sólo en md y superior */}
-            <p className="hidden md:block text-base text-gray-600 ">
+            <p className="hidden md:block text-base text-gray-600 text-left mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             {/* Enlace con flecha */}
@@ -42,4 +42,3 @@ const Card = () => {
 };
 
 export default Card;
-
