@@ -6,7 +6,7 @@ const Card = () => {
       className="grid grid-cols-2 gap-2 p-2
         sm:grid-cols-1 sm:gap-2 
         md:w-[60%] md:mx-auto md:h-[30vh]
-        md:grid-cols-4 md:w-[80vw]  lg:w-[90%] lg:h-[25vh] lg:gap-4 border-black border-2"
+        md:grid-cols-4 md:w-[80vw]  lg:w-[90%] lg:h-[25vh] lg:gap-4"
     >
       {CategoriasJson.categorias.map((categoria) => (
         <div
