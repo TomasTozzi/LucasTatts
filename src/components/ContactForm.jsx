@@ -1,10 +1,10 @@
-import  { useState } from 'react';
+import { useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    message: '',
+    name: "",
+    phone: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -18,52 +18,69 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aquí puedes manejar el envío del formulario, por ejemplo, enviarlo a un servidor
-    console.log('Form Data:', formData);
+    console.log("Form Data:", formData);
   };
 
   return (
-    <div className="w-full mx-auto p-6 bg-white rounded-lg shadow-md md:w-[40%] lg:w-[40%] my-[5vh]">
-      <h2 className="text-2xl font-bold mb-4 text-center">Contactanos</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nombre</label>
+    <div id="contacto" className="w-full mx-auto p-8 bg-white rounded-lg shadow-lg md:w-[75%] lg:w-[40%] my-[5vh] border border-gray-200">
+      <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900">
+        Contáctanos
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="relative">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-800"
+          >
+            Nombre
+          </label>
           <input
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            className="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-gray-500 focus:ring focus:ring-gray-500 focus:ring-opacity-50 px-4 py-3"
             required
           />
         </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Número</label>
+        <div className="relative">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-gray-800"
+          >
+            Número
+          </label>
           <input
             type="tel"
             id="phone"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            className="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-gray-500 focus:ring focus:ring-gray-500 focus:ring-opacity-50 px-4 py-3"
             required
           />
         </div>
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensaje</label>
+        <div className="relative">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-800"
+          >
+            Mensaje
+          </label>
           <textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
-            rows="4"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            rows="5"
+            className="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm focus:border-gray-500 focus:ring focus:ring-gray-500 focus:ring-opacity-50 px-4 py-3"
             required
           ></textarea>
         </div>
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          className="w-full py-3 px-4 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
         >
           Enviar
         </button>
