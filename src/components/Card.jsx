@@ -6,7 +6,7 @@ const Card = () => {
       {CategoriasJson.categorias.map((categoria) => (
         <div
           key={categoria.id}
-          className="bg-white shadow-lg rounded-lg flex flex-col items-center border border-gray-200 w-[90%]  lg:w-[60%] xl:w-[50%] lg:flex-row-reverse flex-shrink-0"
+          className="bg-white shadow-lg rounded-lg flex flex-col items-center border border-gray-200 w-[90%]  sm:w-[40%] md:w-[50%]   lg:w-[60%] xl:w-[50%] lg:flex-row-reverse flex-shrink-0"
         >
           {/* Imagen arriba */}
           <div className="relative w-full h-full">
