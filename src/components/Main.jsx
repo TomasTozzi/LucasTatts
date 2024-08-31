@@ -2,13 +2,13 @@ import NavBar from "../components/NavBar.jsx";
 
 function Main() {
   return (
-    <div className="bg-home bg-center bg-cover">
+    <div id="inicio" className="bg-home bg-center bg-cover">
       {/* NavBar con fondo oscuro y filtro */}
       <header id="home" className="bg-black bg-opacity-0 fixed w-full top-0 z-20">
         <NavBar />
       </header>
-      <main className="relative w-full h-screen h-[90vh] flex items-center">
-        {/* Contenedor con fondo oscuro */}
+      <main className="relative w-full h-screen h-[90vh] flex items-center overflow-hidden">
+        {/* Contenedor con fondo oscuro y gradiente */}
         <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-center p-8 lg:p-12">
           <div className="relative w-full max-w-screen-xl mx-auto">
             {/* Título principal */}
@@ -28,6 +28,8 @@ function Main() {
             </a>
           </div>
         </div>
+        {/* Gradiente suave en la parte inferior */}
+        <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-black to-transparent"></div>
       </main>
     </div>
   );
