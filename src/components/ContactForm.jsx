@@ -24,18 +24,24 @@ const ContactForm = () => {
 
   return (
     <div className="flex flex-col-reverse lg:flex-row md:pb-4 items-center">
-      <div className="w-full  mx-auto p-8 bg-white rounded-lg shadow-lg md:w-[75%] h-screen h-[58vh]  lg:w-[40%] ">
+
+
+      <div className="w-full  mx-auto p-8 bg-white rounded-lg shadow-lg md:w-[75%] lg:w-[40%] h-screen h-[50vh]">
+
+
         <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900">
           Podes encontrarnos en
         </h2>
-        <div className="h-full ">
-          <Mapa />
-        </div>
+        <Mapa />
       </div>
+
+
       <div
         id="contacto"
-        className="w-full mx-auto p-8 bg-white rounded-lg shadow-lg md:w-[75%] h-screen h-[70%]  lg:w-[40%] my-[5vh] border border-gray-200"
+        className="w-full mx-auto p-8 bg-white rounded-lg shadow-lg md:w-[75%]    lg:w-[40%] my-[5vh] border border-gray-200"
       >
+
+
         <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900">
           Contáctanos
         </h2>
