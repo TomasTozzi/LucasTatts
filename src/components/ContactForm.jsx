@@ -26,7 +26,7 @@ const ContactForm = () => {
     <div className="flex flex-col-reverse lg:flex-row md:pb-4 items-center">
 
 
-      <div className="w-full  mx-auto p-8 bg-white rounded-lg shadow-lg md:w-[75%] lg:w-[40%] h-screen h-[50vh]">
+      <div className="w-full  mx-auto p-8 bg-white rounded-lg shadow-lg md:w-[75%] lg:w-[40%] h-screen h-[49.9vh]">
 
 
         <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900">
