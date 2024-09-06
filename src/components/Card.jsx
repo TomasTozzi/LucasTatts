@@ -2,29 +2,33 @@ import CategoriasJson from "../assets/categorias.json";
 
 const Card = () => {
   return (
-    <div className="flex flex-col items-center gap-6 p-6">
+    <div className="flex flex-row flex-wrap items-center gap-6 p-6">
       {CategoriasJson.categorias.map((categoria) => (
         <div
           key={categoria.id}
-          className="bg-white shadow-lg rounded-lg flex flex-col items-center border border-gray-200 w-[90%]  sm:w-[40%] md:w-[50%]   lg:w-[60%] xl:w-[50%] lg:flex-row-reverse flex-shrink-0"
+          className="bg-white shadow-lg rounded-lg  flex flex-col items-center border border-gray-200 w-[90%] sm:w-[40%] md:w-[45%] m-auto lg:w-[46vw] xl:w-[40%] lg:flex-row-reverse flex-shrink-0 h-[30vh]" // Altura relativa
         >
           {/* Imagen arriba */}
-          <div className="relative w-full h-full">
+          <div className="h-[60%] lg:h-full  w-full  lg:w-[50%] "> {/* Ajusta el tamaño del contenedor de la imagen */}
             <img
-              src={categoria.imagenes} // Assuming categoria has an image property
+              src={categoria.imagenes}
               alt={categoria.name}
-              className="w-full h-full object-cover rounded-t-lg"
+              className="h-full w-full object-cover" // Imagen ocupa todo el alto del contenedor
             />
           </div>
+
           {/* Contenido debajo */}
-          <div className="p-4 flex flex-col w-full h-auto">
+          <div className="p-4 flex flex-col w-full lg:w-[50%] h-full"> {/* El contenido ocupa el 50% en pantallas grandes */}
             {/* Título */}
             <h2 className="text-xl sm:text-2xl font-bold text-gray-800 text-left mb-2">
               {categoria.name}
             </h2>
             {/* Descripción visible sólo en md y superior */}
-            <p className="hidden md:block text-base text-gray-600 text-left mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <p className="hidden lg:block text-base text-gray-600 text-left mb-4 n  ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
             </p>
             {/* Enlace con flecha */}
             <a
