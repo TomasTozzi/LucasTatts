@@ -2,7 +2,7 @@ import CategoriasJson from "../assets/categorias.json";
 
 const Card = () => {
   return (
-    <div className="flex flex-row flex-wrap items-center  border border-black  gap-6 p-6">
+    <div className="flex flex-row flex-wrap items-center    gap-6 p-6">
       {CategoriasJson.categorias.map((categoria) => (
         <div
           key={categoria.id}
