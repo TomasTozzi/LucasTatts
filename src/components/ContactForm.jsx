@@ -22,7 +22,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse lg:align-center lg:justify-center lg:flex-row items-stretch h-[70vh] gap-6 p-4 lg:p-8">
+    <div className="flex flex-col-reverse  lg:align-center lg:justify-center lg:flex-row items-stretch  gap-6 p-4 lg:p-8">
       {/* Contenedor del mapa */}
       <div className="w-full max-w-lg sm:max-w-[100%] lg:m-0 md:max-w-[90%] md:m-auto lg:max-w-[40%] bg-white p-6 rounded-xl shadow-xl border border-gray-200 flex flex-col justify-between">
         <h2 className="text-2xl lg:text-3xl font-semibold text-center text-gray-900 ">
