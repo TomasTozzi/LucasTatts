@@ -1,23 +1,35 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-const CircleWithArrow = () => {
+const ScrollButton = () => {
   const [show, setShow] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState('down');
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const scrollPosition = window.scrollY;
-    const halfPageHeight = document.documentElement.scrollHeight / 2;
-    // Mostrar si está por debajo de la mitad de la página, ocultar si está por encima
-    setShow(scrollPosition > halfPageHeight);
-  };
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const halfPageHeight = (documentHeight - windowHeight) / 2;
+
+    if (scrollPosition < halfPageHeight) {
+      setShow(true);
+      setScrollDirection('down');
+    } else if (scrollPosition >= halfPageHeight) {
+      setShow(true);
+      setScrollDirection('up');
+    }
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll]);
+
+  const linkTarget = scrollDirection === 'down' ? "#contacto" : "#inicio";
+  const arrowDirection = scrollDirection === 'down' ? "M5 9l7 7 7-7" : "M19 15l-7-7-7 7";
 
   return (
     <div
-      className={`fixed bottom-4 right-4 flex items-center justify-center w-16 h-16 z-50 transition-opacity duration-500 ${
+      className={`fixed bottom-4 right-4 flex items-center justify-center w-16 h-16 z-50 ${
         show ? "opacity-100 animate-fadeIn" : "opacity-0 animate-fadeOut"
       }`}
     >
@@ -26,9 +38,9 @@ const CircleWithArrow = () => {
         <div className="w-full h-full bg-yellow-300 border-2 border-black rounded-full flex items-center justify-center shadow-lg">
           {/* Flecha */}
           <div className="w-8 h-8 flex items-center justify-center">
-            <a href="#inicio">
+            <a href={linkTarget}>
               <svg
-                className="w-6 h-6 text-black transform "
+                className="w-6 h-6 text-black"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -38,7 +50,7 @@ const CircleWithArrow = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M19 15l-7-7-7 7"
+                  d={arrowDirection}
                 />
               </svg>
             </a>
@@ -49,4 +61,4 @@ const CircleWithArrow = () => {
   );
 };
 
-export default CircleWithArrow;
+export default ScrollButton;

@@ -2,18 +2,18 @@ import CategoriasJson from "../assets/categorias.json";
 
 const Card = () => {
   return (
-    <div className="flex flex-row flex-wrap items-center    gap-6 p-6">
+    <div className="flex flex-row flex-wrap items-center md:w-[80%] lg:w-[100%] m-auto  gap-6 p-6">
       {CategoriasJson.categorias.map((categoria) => (
         <div
           key={categoria.id}
-          className="bg-white shadow-lg rounded-lg  flex flex-col items-center border border-gray-200 w-[90%] sm:w-[40%] md:w-[45%] m-auto lg:w-[46vw] xl:w-[40%] lg:flex-row-reverse flex-shrink-0 h-[30vh]" // Altura relativa
+          className="bg-white shadow-lg rounded-tr-lg rounded-br-lg flex flex-col items-center border border-black w-[90%] sm:w-[40%] md:w-[45%] m-auto lg:w-[46vw] xl:w-[45%] lg:flex-row-reverse flex-shrink-0 h-[30vh]" // Altura relativa
         >
           {/* Imagen arriba */}
-          <div className="h-[60%] lg:h-full  w-full  lg:w-[50%] "> {/* Ajusta el tamaño del contenedor de la imagen */}
+          <div className="h-[60%] lg:h-full w-full lg:w-[50%]"> {/* Ajusta el tamaño del contenedor de la imagen */}
             <img
               src={categoria.imagenes}
               alt={categoria.name}
-              className="h-full w-full object-cover" // Imagen ocupa todo el alto del contenedor
+              className="h-full w-full object-cover rounded-tr-lg rounded-br-lg" // Imagen ocupa todo el alto del contenedor
             />
           </div>
 
@@ -24,11 +24,10 @@ const Card = () => {
               {categoria.name}
             </h2>
             {/* Descripción visible sólo en md y superior */}
-            <p className="hidden lg:block text-base text-gray-600 text-left mb-4 n  ">
+            <p className="hidden lg:block text-base text-gray-600 text-left mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              enim ad minim veniam,
             </p>
             {/* Enlace con flecha */}
             <a

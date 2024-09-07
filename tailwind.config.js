@@ -10,6 +10,10 @@ export default {
       backgroundImage: {
         home: "url('/src/assets/bg-home.jpg')", // Ensure the path matches your file location
       },
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in',
+        fadeOut: 'fadeOut 0.5s ease-out',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
@@ -19,10 +23,6 @@ export default {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
-      },
-      animation: {
-        fadeIn: 'fadeIn 0.5s ease-in-out',
-        fadeOut: 'fadeOut 0.5s ease-in-out',
       },
     },
   },

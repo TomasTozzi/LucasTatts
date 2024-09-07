@@ -38,7 +38,7 @@ const ContactForm = () => {
         className="w-full max-w-lg  sm:max-w-[100%] md:max-w-[90%] md:m-auto lg:max-w-[40%] lg:m-0 bg-white p-6 lg:p-8 rounded-xl shadow-xl border border-gray-200 flex flex-col justify-evenly"
       >
         <h2 className="text-2xl lg:text-3xl font-semibold text-center text-gray-900">
-          Contáctanos
+          Dejanos tu Mensaje
         </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4">
